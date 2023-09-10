@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, Dimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 
+const windowWidth = Dimensions.get('window').width;
 
 export default function App() {
   const [webViewVisible, setWebViewVisible] = useState(false);
@@ -13,12 +14,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
       <View style={styles.topContent}>
         <View>
           <Image
             source={require('./assets/Dp.jpg')}
-            style={{ width: 200, height: 200, borderRadius: 100 }}
+            style={styles.image}
           />
         </View>
         <Text style={styles.name}>Israel Olaide</Text>
@@ -46,18 +46,18 @@ const styles = StyleSheet.create({
   topContent: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
+    marginTop: 0.2 * windowWidth,
   },
   name: {
     fontFamily: 'Roboto',
     fontWeight: 'bold',
-    fontSize: 60,
-    marginTop: 10,
+    fontSize: 0.1 * windowWidth,
+    marginTop: 0.02 * windowWidth,
   },
   image: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+    width: 0.4 * windowWidth,
+    height: 0.4 * windowWidth,
+    borderRadius: 0.2 * windowWidth,
   },
   webview: {
     flex: 1,
