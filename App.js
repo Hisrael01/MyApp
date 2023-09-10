@@ -20,7 +20,7 @@ export default function App() {
 
     const result = await ImagePicker.launchImageLibraryAsync();
 
-    if (!result.cancelled) {
+    if (!result.canceled) {
       setProfilePicture(result.uri);
       // Save the image URI in AsyncStorage
       await AsyncStorage.setItem('profilePicture', result.uri);
